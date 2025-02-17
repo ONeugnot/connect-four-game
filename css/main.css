@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bayon&family=Big+Shoulders+Display:wght@100..900&family=Chango&family=DM+Serif+Display:ital@0;1&family=Fira+Code:wght@300..700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Jua&family=Karla:ital,wght@0,200..800;1,200..800&family=League+Spartan:wght@100..900&family=Martian+Mono:wght@100..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Pixelify+Sans:wght@400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+
+* {
+	font-family: "Space Grotesk", serif;
+}
+
+:root {
+	/* color */
+
+	--color-black: #000000;
+	--color-dark-purple: #5c2dd5;
+	--color-purple: #7945ff;
+	--color-red: #fd6687;
+	--color-yellow: #ffce67;
+	--color-white: #ffffff;
+
+	/* typography */
+
+	--Heading-Large-Text: 56px;
+	--Heading-Large-Line: 71px;
+	--Heading-Medium-Text: 24px;
+	--Heading-Medium-Line: 31px;
+	--Heading-Small-Text: 20px;
+	--Heading-Small-Line: 26px;
+	--Heading-Extra-Small-Text: 16px;
+	--Heading-Extra-Small-Line: 21px;
+
+	/* hover button */
+
+	--purple-hover-shadow-button: 0px 10px 0px 0px #5c2dd5;
+	--black-Idle-shadow-button: 0px 10px 0px 0px #000000;
+	--purple-hover-border-button: 3px solid #5c2dd5;
+	--black-Idle-border-button: 3px solid #000000;
+	--purple-hover-border-little-button: 0px 5px 0px 0px #5c2dd5;
+	--black-Idle-border-little-button: 0px 5px 0px 0px #000000;
+	--purple-Hover-border-little-button: 3px solid #5c2dd5;
+	--black-Idle-border-little-button: 3px solid #000000;
+
+	/* color text */
+
+	--white-color-text: #ffffff;
+	--black-color-text: #000000;
+	--purple-color-text: #7945ff;
+}
+
+body {
+	background-color: var(--color-purple);
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+nav {
+	width: 60%;
+	display: flex;
+	justify-content: space-between;
+	padding: 70px 60px;
+	align-items: center;
+}

@@ -1,0 +1,19 @@
+.nav-button {
+	background-color: var(--color-dark-purple);
+	color: var(--color-white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 10%;
+	border-radius: 20px;
+	font-size: var(--Heading-Extra-Small-Text);
+	line-height: var(--Heading-Extra-Small-Line);
+	font-weight: 700;
+	border: none;
+	height: 10%;
+	padding: 13px;
+}
+
+.restart-buttn {
+	width: 13%;
+}
