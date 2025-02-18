@@ -4,7 +4,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 10%;
+	width: 100%;
 	border-radius: 20px;
 	font-size: var(--Heading-Extra-Small-Text);
 	line-height: var(--Heading-Extra-Small-Line);
@@ -15,5 +15,5 @@
 }
 
 .restart-buttn {
-	width: 13%;
+	width: 100%;
 }
