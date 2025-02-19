@@ -15,7 +15,7 @@
 			<nav>
 				<ul class="nav-item">
 					<li>
-						<button class="nav-button">MENU</button>
+						<button class="nav-button menu-back">MENU</button>
 					</li>
 					<li>
 						<img src="./assets/logo-four-game.svg" alt="logo of Four Game" />
@@ -102,7 +102,7 @@
 					<button class="btn-grid"><img src="" alt="" /></button>
 					<button class="btn-grid"><img src="" alt="" /></button>
 				</div>
-				<!-- <div class="counter">
+				<div class="counter">
 					<img
 						class="coutner-box"
 						src="./assets/yellow-counter.svg"
@@ -112,14 +112,21 @@
 						<p>PLAYER 2'S TURN</p>
 						<span aria-live="polite" role="log">0s</span>
 					</div>
-				</div> -->
-				<div class="win-red">
+				</div>
+				<!-- <div class="win-red">
 					<div class="top-win">
 						<p>PLAYER 1</p>
 						<span>WINS</span>
 					</div>
 					<button class="play-again">PLAY AGAIN</button>
-				</div>
+				</div> -->
+				<!-- <div class="win-yellow">
+					<div class="top-win">
+						<p>PLAYER 2</p>
+						<span>WINS</span>
+					</div>
+					<button class="play-again play-again-yellows">PLAY AGAIN</button>
+				</div> -->
 				<!-- <div class="counter-red">
 					<img
 						class="coutner-box-red"
@@ -140,6 +147,57 @@
 				</div>
 			</div>
 		</main>
+		<!-- <dialog class="full-rules">
+			<div class="rules">
+				<div class="title-rules">
+					<span class="text-pause">RULES</span>
+				</div>
+				<section class="rules-objective">
+					<p class="little-rules">OBJECTIVE</p>
+					<span
+						>Be the first player to connect 4 of the same colored discs in a row
+						(either vertically, horizontally, or diagonally).</span
+					>
+				</section>
+				<section class="how-to-play">
+					<p class="little-rules">HOW TO PLAY</p>
+					<ol>
+						<li>Red goes first in the first game.</li>
+						<li>
+							Players must alternate turns, and only one disc can be dropped in
+							each turn.
+						</li>
+						<li>The game ends when there is a 4-in-a-row or a stalemate.</li>
+						<li>
+							The starter of the previous game goes second on the next game.
+						</li>
+					</ol>
+				</section>
+				<img id="btn-remove" src="./assets/icon-check.svg" alt="icon check " />
+			</div>
+		</dialog> -->
+		<!-- <div class="full-menu">
+			<div class="pause">
+				<span class="text-pause pause-white">PAUSE</span>
+				<div class="div-btn-pause">
+					<button class="btn-pause">CONTINUE-GAME</button>
+					<button class="btn-pause">RESTART</button>
+					<button class="btn-pause pink-btn">QUIT GAME</button>
+				</div>
+			</div>
+		</div> -->
+		<div class="first-menu">
+			<div class="game-menu">
+				<img src="./assets/logo-four-game.svg" alt="logo-four-game" />
+				<div class="btn-menu">
+					<button class="menu-btn btn-img playervs">
+						PLAY VS PLAYER
+						<img src="./assets/player2.svg" alt="happy-face" />
+					</button>
+					<button class="menu-btn dif-btn-color rules-btn">GAME RULES</button>
+				</div>
+			</div>
+		</div>
 		<div class="background-raduis"></div>
 		<script src="./app.js"></script>
 	</body>
