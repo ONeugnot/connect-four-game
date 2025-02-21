@@ -314,7 +314,7 @@ button {
 	position: absolute;
 	width: 80px;
 	bottom: -40px;
-	left: 40%;
+	left: 42%;
 	cursor: pointer;
 }
 .rules-objective {
@@ -402,6 +402,11 @@ button {
 	line-height: var(--Heading-Medium-Line);
 	font-weight: 700;
 }
+
+.btn-pause:hover {
+	border: var(--purple-hover-border-button);
+	box-shadow: var(--purple-hover-shadow-button);
+}
 .pink-btn {
 	background-color: var(--color-red);
 	color: var(--color-white);
@@ -455,6 +460,11 @@ button {
 	font-size: var(--Heading-Medium-Text);
 	line-height: var(--Heading-Medium-Line);
 	font-weight: 700;
+}
+
+.menu-btn:hover {
+	box-shadow: var(--purple-hover-shadow-button);
+	border: var(--purple-hover-border-button);
 }
 
 .btn-img {
