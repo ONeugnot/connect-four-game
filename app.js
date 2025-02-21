@@ -241,5 +241,5 @@ function winningCheck(gridcheck) {
 }
 const btnSelect = document.querySelector(".btn-grid");
 btnSelect.addEventListener("click", () => {
-
+	winningCheck();
 });
