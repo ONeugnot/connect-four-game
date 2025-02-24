@@ -189,10 +189,8 @@ button {
 }
 
 .select {
-	position: absolute;
-	top: 15%;
-	left: 32.3%;
-	z-index: 10;
+	padding: 0px 25px;
+
 }
 
 .counter-red {

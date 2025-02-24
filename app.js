@@ -6,6 +6,8 @@ const grid = [
 	["", "", "", "", "", "", ""],
 	["", "", "", "", "", "", ""],
 ];
+const playerimg1 = "./assets/player1.svg"
+const playerimg2 = "./assets/player2.svg"
 let winningArray = [
 	[0, 1, 2, 3],
 	[41, 40, 39, 38],
@@ -81,8 +83,8 @@ const gridCase = document.querySelector(".grid-btn");
 
 let playerOneScore = 0;
 let playerTwoScore = 0;
-let chronometre = 0;
 let tourPlayer = "";
+
 const grilleColumns = document.querySelectorAll(".grid-col");
 const backgroundChangeWin = document.querySelector(".background-raduis");
 const ruleBtn = document.querySelector(".rules-btn");
@@ -92,6 +94,32 @@ const playerVsPlayer = document.querySelector(".playervs");
 const menuPrinc = document.querySelector(".first-menu");
 const btnMenu = document.querySelector(".nav-button");
 const body = document.body;
+
+
+
+let count = 30;
+let timer = null;
+let isRunning = false; 
+const textcompteur = document.getElementById('textcompteur');
+const menubtn = document.getElementById('menubtn');
+textcompteur.textContent = count;
+
+
+	menubtn.addEventListener("click", () => {
+		if (!isRunning) {
+			isRunning = true;
+			
+			timer = setInterval(() => {
+				if (count <= 0) {
+					count = 30;
+					textcompteur.textContent = count;
+				} else {
+					count--; 
+					textcompteur.textContent = count;
+				}
+			}, 1000);
+		}
+	});
 
 console.log(grilleColumns);
 
@@ -202,6 +230,9 @@ function menuPause() {
 
 	btnPause3.addEventListener("click", () => {
 		body.appendChild(menuPrinc);
+		 count = 30;
+		 timer = null;
+		isRunning = false; 
 		fullMenu.remove();
 	});
 	return;
@@ -233,6 +264,10 @@ function winningCheck(gridcheck) {
 					const littleelementgrid = gridelement[a];
 					if (littleelementgrid == elementcheck) {
 						console.log("true");
+						return true;
+					}else if(littleelementgrid !== elementcheck){
+						console.log("false");
+						return false;
 					}
 				}
 			}
@@ -242,4 +277,5 @@ function winningCheck(gridcheck) {
 const btnSelect = document.querySelector(".btn-grid");
 btnSelect.addEventListener("click", () => {
 	winningCheck();
+	
 });

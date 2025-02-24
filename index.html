@@ -28,11 +28,7 @@
 			</nav>
 		</header>
 		<main>
-			<img
-				class="select"
-				src="./assets/colonne-select.svg"
-				alt="image-select-colonne"
-			/>
+
 
 			<div class="player-score">
 				<img src="./assets/normal-face-player1-red.svg" alt="smiley rouge" />
@@ -42,6 +38,11 @@
 				</div>
 			</div>
 			<div class="game-table">
+				<img
+				class="select"
+				src="./assets/colonne-select.svg"
+				alt="image-select-colonne"
+			/>
 				<div class="grid-btn">
 					<button class="btn-grid">
 						<img src="" alt="" />
@@ -110,8 +111,8 @@
 						alt="conteur pour les joueurs"
 					/>
 					<div class="top-score-text">
-						<p>PLAYER 2'S TURN</p>
-						<span aria-live="polite" role="log">0s</span>
+						<p>PLAYER 1'S TURN</p>
+						<span id="textcompteur" class="time" aria-live="polite" role="log">0s</span>
 					</div>
 				</div>
 				<!-- <div class="win-red">
@@ -191,11 +192,11 @@
 			<div class="game-menu">
 				<img src="./assets/logo-four-game.svg" alt="logo-four-game" />
 				<div class="btn-menu">
-					<button class="menu-btn btn-img playervs">
+					<button id="menubtn" class="menu-btn btn-img playervs">
 						PLAY VS PLAYER
 						<img src="./assets/player2.svg" alt="happy-face" />
 					</button>
-					<button class="menu-btn dif-btn-color rules-btn">GAME RULES</button>
+					<button class="menu-btn btnplayer dif-btn-color rules-btn">GAME RULES</button>
 				</div>
 			</div>
 		</div>
