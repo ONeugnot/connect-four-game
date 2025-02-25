@@ -107,10 +107,10 @@ const turnplayer = document.getElementById("#pchange");
 textcompteur.textContent = count;
 
 function compteurgame() {
-	if (!Risunning) {
+	if (!isRunning) {
 			isRunning = true;
 
-			timer = setInt	rval(() => {
+			timer = setInterval(() => {
 				if (count <= 0) {
 					count = 15;
 					textcompteur.textContent = count;
@@ -129,6 +129,7 @@ playerVsPlayer.addEventListener("click", () => {
 	menuPrinc.remove();
 });
 menubtn.addEventListener("click", () => {
+	clearInterval
 	compteurgame()
 });
 
@@ -253,9 +254,10 @@ function menuPause() {
 
 	btnPause3.addEventListener("click", () => {
 		body.appendChild(menuPrinc);
-		count = 15;
-		timer = null;
+		clearInterval(timer)
+		count = 16;
 		isRunning = false; 
+		timer = null;
 		fullMenu.remove();
 	});
 	return;
