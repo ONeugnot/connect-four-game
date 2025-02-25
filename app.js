@@ -97,35 +97,58 @@ const body = document.body;
 
 
 
-let count = 30;
+let count = 15;
+let rotatePlayerTurn = 0;
 let timer = null;
 let isRunning = false; 
 const textcompteur = document.getElementById('textcompteur');
 const menubtn = document.getElementById('menubtn');
+const turnplayer = document.getElementById("#pchange");
 textcompteur.textContent = count;
 
-
-	menubtn.addEventListener("click", () => {
-		if (!isRunning) {
+function compteurgame() {
+	if (!Risunning) {
 			isRunning = true;
-			
-			timer = setInterval(() => {
+
+			timer = setInt	rval(() => {
 				if (count <= 0) {
-					count = 30;
+					count = 15;
 					textcompteur.textContent = count;
+
 				} else {
 					count--; 
 					textcompteur.textContent = count;
 				}
 			}, 1000);
 		}
-	});
 
+}
 console.log(grilleColumns);
 
 playerVsPlayer.addEventListener("click", () => {
 	menuPrinc.remove();
 });
+menubtn.addEventListener("click", () => {
+	compteurgame()
+});
+
+function startGame() {
+	playerOneScore = 0;
+	playerTwoScore = 0;
+	tourPlayer = "";
+	count = 15;
+	isRunning = false; 
+	timer = null;
+	grid = [
+		["", "", "", "", "", "", ""],
+		["", "", "", "", "", "", ""],
+		["", "", "", "", "", "", ""],
+		["", "", "", "", "", "", ""],
+		["", "", "", "", "", "", ""],
+		["", "", "", "", "", "", ""],
+	];
+}
+
 
 function activeRulesBtn() {
 	const body = document.body;
@@ -230,14 +253,13 @@ function menuPause() {
 
 	btnPause3.addEventListener("click", () => {
 		body.appendChild(menuPrinc);
-		 count = 30;
-		 timer = null;
+		count = 15;
+		timer = null;
 		isRunning = false; 
 		fullMenu.remove();
 	});
 	return;
 }
-
 ruleBtn.addEventListener("click", activeRulesBtn);
 
 btnMenu.addEventListener("click", () => {
