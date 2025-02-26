@@ -1,5 +1,5 @@
 const grid = [
-	["x", "x", "x", "x", "", "", ""],
+	["", "", "", "", "", "", ""],
 	["", "", "", "", "", "", ""],
 	["", "", "", "", "", "", ""],
 	["", "", "", "", "", "", ""],
@@ -254,7 +254,7 @@ function menuPause() {
 
 	btnPause3.addEventListener("click", () => {
 		body.appendChild(menuPrinc);
-		clearInterval(timer)
+
 		count = 16;
 		isRunning = false; 
 		timer = null;
