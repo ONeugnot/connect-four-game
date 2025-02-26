@@ -108,6 +108,7 @@ textcompteur.textContent = count;
 
 function compteurgame() {
 	if (!isRunning) {
+		clearInterval(timer)
 			isRunning = true;
 
 			timer = setInterval(() => {
@@ -129,7 +130,6 @@ playerVsPlayer.addEventListener("click", () => {
 	menuPrinc.remove();
 });
 menubtn.addEventListener("click", () => {
-	clearInterval
 	compteurgame()
 });
 
@@ -140,6 +140,7 @@ function startGame() {
 	count = 15;
 	isRunning = false; 
 	timer = null;
+	textcompteur.textContent = count
 	grid = [
 		["", "", "", "", "", "", ""],
 		["", "", "", "", "", "", ""],
@@ -250,7 +251,35 @@ function menuPause() {
 
 	btnPause1.addEventListener("click", () => {
 		fullMenu.remove();
+		compteurgame()
 	});
+
+	btnPause2.addEventListener("click", () => {
+		fullMenu.remove();
+		count = 16
+		timer = setInterval(() => {
+			if (count <= 0) {
+				count = 15;
+				textcompteur.textContent = count;
+
+			} else {
+				count--; 
+				textcompteur.textContent = count;
+			}
+		}, 1000);
+		count = 16
+		playerOneScore = 0;
+		playerTwoScore = 0;
+		tourPlayer = "";
+		grid = [
+			["", "", "", "", "", "", ""],
+			["", "", "", "", "", "", ""],
+			["", "", "", "", "", "", ""],
+			["", "", "", "", "", "", ""],
+			["", "", "", "", "", "", ""],
+			["", "", "", "", "", "", ""],
+		];
+	})
 
 	btnPause3.addEventListener("click", () => {
 		body.appendChild(menuPrinc);
@@ -259,6 +288,7 @@ function menuPause() {
 		isRunning = false; 
 		timer = null;
 		fullMenu.remove();
+		startGame()
 	});
 	return;
 }
@@ -266,6 +296,8 @@ ruleBtn.addEventListener("click", activeRulesBtn);
 
 btnMenu.addEventListener("click", () => {
 	menuPause();
+	clearInterval(timer)
+	isRunning = false
 });
 
 // for (let i = 0; i < grilleColumns.length; i++) {
