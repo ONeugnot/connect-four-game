@@ -104,7 +104,41 @@ let isRunning = false;
 const textcompteur = document.getElementById('textcompteur');
 const menubtn = document.getElementById('menubtn');
 const turnplayer = document.getElementById("#pchange");
+const gridfour = document.querySelectorAll(".grid-btn")
 textcompteur.textContent = count;
+
+
+	for (let i = 0; i < grid.length; i++) {
+		const textplayerchange = document.querySelector("#pchange")
+		gridfour.addEventListener("keydown", (e) => {
+			const img = gridObject.firstElementChild;
+	
+			if (img.alt) return;
+			if(e.code === "Space")
+				console.log("bonjour");
+				
+			if (rotatePlayerTurn % 2 == 0) {
+				if (img.src && img.alt == "") {
+					img.src = "./assets/red-small-cercle.svg"
+					img.alt = "red"
+					textplayerchange.textContent = "PLAYER 1'S TURN"
+				}
+			}else {
+				if (img.src && img.alt == "") {
+					img.src = "./assets/yellow-small-cercle.svg"
+					img.alt = "yellow"
+					textplayerchange.textContent = "PLAYER 2'S TURN"
+	4
+			}
+		}
+		grid[i] = img.alt
+		rotatePlayerTurn++
+		console.log(grid);
+		
+	})
+
+		}
+
 
 function compteurgame() {
 	if (!isRunning) {
@@ -330,8 +364,3 @@ function winningCheck(gridcheck) {
 		}
 	}
 }
-const btnSelect = document.querySelector(".btn-grid");
-btnSelect.addEventListener("click", () => {
-	winningCheck();
-	
-});
