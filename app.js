@@ -106,50 +106,52 @@ const menubtn = document.getElementById('menubtn');
 textcompteur.textContent = count;
 const turnplayer = document.getElementById("pchange");
 const gridfour = document.querySelectorAll(".grid-btn");
-const btnimg = document.querySelectorAll(".img-btn");
+const jspimg = document.getElementById("jspimg");
+const selectimg = document.querySelector(".select")
 gridfour.forEach((cell, i) => {
     cell.addEventListener("keydown", (e) => {
-        const img = cell.firstElementChild;
-
-        if (img.alt) return; 
-
-        if (e.code === "Space") {
-            if (rotatePlayerTurn % 2 === 0) {
-                img.src = "./assets/red-small-cercle.svg";
-                img.alt = "red";
-                grid[i] = "red";
-                turnplayer.textContent = "PLAYER 2'S TURN";
-            } else {
-                img.src = "./assets/yellow-small-cercle.svg";
-                img.alt = "yellow";
-                grid[i] = "yellow";
-                turnplayer.textContent = "PLAYER 1'S TURN";
-            }
-
-            rotatePlayerTurn++;
-            console.log(grid);
-			
-           for (const btnimgall of btnimg) {
-			btnimgall.src = img.src;
-			btnimgall.alt = img.alt;
-		 
-		   
-            };
-		}
+        if (e.code !== "Space") return; 
+        const img = cell.querySelector("img"); 
+        if (!img || img.alt) return;
+        if (rotatePlayerTurn % 2 === 0) {
+            img.src = "./assets/red-rond.svg";
+            img.alt = "red";
+            grid[i] = "red";
+			jspimg.src = "./assets/yellow-counter.svg"
+			count = 16
+            turnplayer.textContent = "PLAYER 2'S TURN";
+        } else {
+            img.src = "./assets/yellow-rond.svg";
+            img.alt = "yellow";
+            grid[i] = "yellow";
+			jspimg.src = "./assets/red-counter.svg"
+			count = 16
+            turnplayer.textContent = "PLAYER 1'S TURN";
+        }
+        rotatePlayerTurn++;
+        console.log(grid);
     });
 });
-
-
-
 function compteurgame() {
 	if (!isRunning) {
 		clearInterval(timer)
 			isRunning = true;
-
+		let turnColor = 0
 			timer = setInterval(() => {
 				if (count <= 0) {
+					turnColor++
+					if (turnColor % 2 == 0) {
+					jspimg.src = "./assets/red-counter.svg"
+					turnplayer.textContent = "PLAYER 1'S TURN";
+					selectimg.src = "./assets/rec-yel.svg"
+					}else {
+					jspimg.src = "./assets/yellow-counter.svg"
+					turnplayer.textContent = "PLAYER 2'S TURN";
+					selectimg.src = "./assets/colonne-select.svg"
+					}
 					count = 15;
 					textcompteur.textContent = count;
+					
 
 				} else {
 					count--; 
