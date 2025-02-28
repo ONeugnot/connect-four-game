@@ -103,41 +103,42 @@ let timer = null;
 let isRunning = false; 
 const textcompteur = document.getElementById('textcompteur');
 const menubtn = document.getElementById('menubtn');
-const turnplayer = document.getElementById("#pchange");
-const gridfour = document.querySelectorAll(".grid-btn")
 textcompteur.textContent = count;
+const turnplayer = document.getElementById("pchange");
+const gridfour = document.querySelectorAll(".grid-btn");
+const btnimg = document.querySelectorAll(".img-btn");
+gridfour.forEach((cell, i) => {
+    cell.addEventListener("keydown", (e) => {
+        const img = cell.firstElementChild;
 
+        if (img.alt) return; 
 
-	for (let i = 0; i < grid.length; i++) {
-		const textplayerchange = document.querySelector("#pchange")
-		gridfour.addEventListener("keydown", (e) => {
-			const img = gridObject.firstElementChild;
-	
-			if (img.alt) return;
-			if(e.code === "Space")
-				console.log("bonjour");
-				
-			if (rotatePlayerTurn % 2 == 0) {
-				if (img.src && img.alt == "") {
-					img.src = "./assets/red-small-cercle.svg"
-					img.alt = "red"
-					textplayerchange.textContent = "PLAYER 1'S TURN"
-				}
-			}else {
-				if (img.src && img.alt == "") {
-					img.src = "./assets/yellow-small-cercle.svg"
-					img.alt = "yellow"
-					textplayerchange.textContent = "PLAYER 2'S TURN"
-	4
-			}
+        if (e.code === "Space") {
+            if (rotatePlayerTurn % 2 === 0) {
+                img.src = "./assets/red-small-cercle.svg";
+                img.alt = "red";
+                grid[i] = "red";
+                turnplayer.textContent = "PLAYER 2'S TURN";
+            } else {
+                img.src = "./assets/yellow-small-cercle.svg";
+                img.alt = "yellow";
+                grid[i] = "yellow";
+                turnplayer.textContent = "PLAYER 1'S TURN";
+            }
+
+            rotatePlayerTurn++;
+            console.log(grid);
+			
+           for (const btnimgall of btnimg) {
+			btnimgall.src = img.src;
+			btnimgall.alt = img.alt;
+		 
+		   
+            };
 		}
-		grid[i] = img.alt
-		rotatePlayerTurn++
-		console.log(grid);
-		
-	})
+    });
+});
 
-		}
 
 
 function compteurgame() {

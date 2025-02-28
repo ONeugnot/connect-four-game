@@ -148,6 +148,11 @@ button {
 	box-shadow: inset 0px 10px var(--black-color-text);
 }
 
+.btn-grid img {
+	width: 70px;
+	height: 70px;
+}
+
 .counter {
 	position: relative;
 	bottom: -15px;
